@@ -1,4 +1,5 @@
 #include <Python.h>
+#include <stdio.h>
 
 /*
  * print_python_bytes - Print basic information about a Python bytes object
@@ -11,7 +12,7 @@
 
 void print_python_bytes(PyObject *p)
 {
-    Py_ssize_t i;
+    Py_ssize_t i, size;
     printf("[.] bytes object info\n");
     if (!PyBytes_Check(p))
     {
@@ -19,7 +20,7 @@ void print_python_bytes(PyObject *p)
     return;
     }
 
-    Py_ssize_t size = PyBytes_Size(p);
+    size = PyBytes_Size(p);
     printf(" size: %ld\n", size);
     printf(" trying string: %s\n", PyBytes_AsString(p));
 
@@ -41,9 +42,9 @@ void print_python_bytes(PyObject *p)
  */
 void print_python_list(PyObject *p)
 {
-    Py_ssize_t i;
+    Py_ssize_t i, size;
     printf("[*] Python list info\n");
-    Py_ssize_t size = PyList_Size(p);
+    size = PyList_Size(p);
     printf("[*] Size of the Python List = %ld\n", size);
     printf("[*] Allocated = %ld\n", ((PyListObject *)p)->allocated);
 
