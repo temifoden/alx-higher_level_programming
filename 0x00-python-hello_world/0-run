@@ -1,0 +1,10 @@
+#!/bin/bash
+PYFILE = $PYFILE
+
+if [ -z "$PYFILE" ]; then
+echo "Error: PYFILE environment variable is not set"
+exit 1
+elif [ -f "$PYFILE" ]; then
+echo "Error: $PYFILE does not exist or is not a file"
+exit 1
+fi
