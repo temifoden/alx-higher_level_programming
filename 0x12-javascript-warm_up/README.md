@@ -1,3 +1,4 @@
+#!/Users/macbook525/.nvm/versions/node/v16.14.2/bin/node
 0. First constant, first print
    mandatory
    Write a script that prints “JavaScript is amazing”:
