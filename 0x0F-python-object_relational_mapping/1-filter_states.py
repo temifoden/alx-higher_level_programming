@@ -6,18 +6,18 @@ import MySQLdb
 if __name__ == "__main__":
     # Retrieve command-line argument
     mysql_username = sys.argv[1]
-    mysql_pswd = sys.argv[2]
+    mysql_password = sys.argv[2]
     db_name = sys.argv[3]
 
     # Connect to the mysql database
     db = MySQLdb.connect(host="localhost", port=3306,
-                         user=mysql_username, passwd=mysql_pswd, db=db_name)
+                         user=mysql_username, passwd=mysql_password, db=db_name)
 
     # Create a cursor object
     cursor = db.cursor()
 
     # Execute the SQL query to select all states order by ID
-    cursor.execute('SELECT * FROM states ORDER BY id ASC')
+    cursor.execute('SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC')
 
     # Fetch all rows from the executed query
     states = cursor.fetchall()
