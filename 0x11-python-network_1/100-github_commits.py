@@ -20,9 +20,9 @@ if __name__ == "__main__":
 
     try:
         response = requests.get(url)
-        response.raise_for_status()     # Check for HTTP errors
+        response.raise_for_status()   # Check for HTTP errors
 
-        commits = response.json()[:10] # Get the lastest 10 commits
+        commits = response.json()[:10]  # Get the lastest 10 commits
 
         for commit in commits:
             sha = commit['sha']
