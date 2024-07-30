@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 
 const request = require('request');
 const episodeNum = process.argv[2];
@@ -14,3 +14,4 @@ request(API_URL + episodeNum, function (err, response, body) {
     console.log('Error code: ' + response.statusCode);
   }
 });
+g
